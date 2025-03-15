@@ -13,6 +13,7 @@ import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Optional;
 
 @Entity
 @Getter
@@ -46,7 +47,7 @@ public class Hotel {
     @NotNull
     private Boolean active;
 
-    @ManyToOne
+    @ManyToOne(optional = false)
     private User Owner;
 
     @OneToMany(mappedBy = "hotel")
